@@ -1,0 +1,10 @@
+streamlit
+torch
+torchvision
+Pillow
+numpy
+pandas
+matplotlib
+opencv-python-headless
+streamlit-webrtc
+
