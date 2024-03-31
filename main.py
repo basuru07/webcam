@@ -72,7 +72,7 @@ def main():
     st.title("Skin Oiliness Detection")
     st.markdown("Open your webcam to detect skin oiliness in real-time.")
 
-    # Function to process webcam frames
+    # Define the function to process the webcam frames
     def process_frame(frame):
         try:
             # Convert frame to RGB
