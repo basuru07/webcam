@@ -4,10 +4,10 @@ import numpy as np
 import streamlit as st
 from torchvision import transforms
 import cv2
-from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
+from streamlit_webrtc import VideoProcessorBase, webrtc_streamer
 
 
-class SkinTypePredictor(VideoTransformerBase):
+class SkinTypePredictor(VideoProcessorBase):
     def __init__(self):
         super().__init__()
 
@@ -35,7 +35,7 @@ class SkinTypePredictor(VideoTransformerBase):
         image = preprocess(image).unsqueeze(0)
         return image
 
-    def transform(self, frame):
+    def receive(self, frame):
         # Perform face detection using OpenCV
         face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -86,15 +86,15 @@ def main():
         unsafe_allow_html=True
     )
 
-    webrtc_ctx = webrtc_streamer(key="example", video_transformer_factory=SkinTypePredictor)
+    webrtc_ctx = webrtc_streamer(key="example", video_processor_factory=SkinTypePredictor)
 
-    if webrtc_ctx.video_transformer:
+    if webrtc_ctx.video_processor:
         st.markdown("<h5>Webcam Feed with Predictions:</h5>", unsafe_allow_html=True)
         stframe = st.empty()
 
         while True:
             try:
-                frame = webrtc_ctx.video_transformer.get_frame()
+                frame = webrtc_ctx.video_processor.frame_out
                 stframe.image(frame, channels="BGR", use_column_width=True)
             except AttributeError:
                 pass
