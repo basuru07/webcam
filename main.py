@@ -57,8 +57,10 @@ def main():
     webrtc_ctx = webrtc_streamer(key="example", video_transformer_factory=VideoTransformer)
 
     if webrtc_ctx.video_transformer:
-        selected_skin_type = webrtc_ctx.video_transformer.skin_type
+        original_img, selected_skin_type = webrtc_ctx.video_transformer.transform_output
+        st.image(original_img, caption="Original Image", use_column_width=True)
         st.write(f"Predicted Skin Type: {selected_skin_type}")
 
 if __name__ == "__main__":
     main()
+
