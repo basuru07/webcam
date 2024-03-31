@@ -7,7 +7,7 @@ from torchvision import transforms
 from copy import deepcopy
 
 # Define the URL from where to download the model
-model_url = 'https://github.com/basuru07/webcam/blob/main/model.pth'
+model_url = 'https://github.com/basuru07/oil_face_detection/raw/main/model.pth'
 
 # Download the model file locally
 local_model_path = 'model.pth'
