@@ -74,14 +74,17 @@ def main():
 
     # Function to process webcam frames
     def process_frame(frame):
-        # Make predictions on the frame
-        skin_type, level = predict_skin_type_and_oiliness_level(frame)
+        try:
+            # Make predictions on the frame
+            skin_type, level = predict_skin_type_and_oiliness_level(frame)
 
-        # Draw the prediction results on the frame
-        cv2.putText(frame, f"Skin Type: {skin_type}", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-        cv2.putText(frame, f"Oiliness Level: {level}", (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            # Draw the prediction results on the frame
+            cv2.putText(frame, f"Skin Type: {skin_type}", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            cv2.putText(frame, f"Oiliness Level: {level}", (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-        # Return the processed frame
+        except Exception as e:
+            st.error(f"An error occurred: {str(e)}")
+
         return frame
 
     # Start the webcam and display predictions
