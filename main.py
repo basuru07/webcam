@@ -75,6 +75,9 @@ def main():
     # Function to process webcam frames
     def process_frame(frame):
         try:
+            # Convert frame to RGB
+            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
             # Make predictions on the frame
             skin_type, level = predict_skin_type_and_oiliness_level(frame)
 
