@@ -4,8 +4,7 @@ torch
 Pillow
 numpy
 streamlit
-opencv-python
+opencv-python-headless
 requests
 torchvision
-opencv-python-headless
 
