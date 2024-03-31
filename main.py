@@ -91,7 +91,10 @@ def main():
         return frame
 
     # Start the webcam and display predictions
-    webrtc_streamer(key="example", video_processor_factory=process_frame)
+    try:
+        webrtc_streamer(key="example", video_processor_factory=process_frame)
+    except Exception as e:
+        st.error(f"Error initializing WebRTC streamer: {str(e)}")
 
 if __name__ == "__main__":
     main()
