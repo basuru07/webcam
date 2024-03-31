@@ -7,5 +7,5 @@ streamlit
 opencv-python
 requests
 torchvision
-
+opencv-python-headless
 
