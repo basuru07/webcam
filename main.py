@@ -100,49 +100,6 @@ def main():
         "<h1 style='color:#16056B;'>Live Skin Oilyness Detection Web Application</h1>",
         unsafe_allow_html=True
     )
-
-    st.markdown(
-        "<h3 style='color:#16056B'>Introduction of our Application</h3>",
-        unsafe_allow_html=True
-    )
-    st.markdown(
-        "<p style='text-align: justify;'>The application utilizes image processing techniques and ResNet architecture to detect and classify skin oiliness levels. Leveraging deep learning, it accurately identifies skin types as dry, normal, oily, or highly oily based on visual cues. By analyzing facial features, it provides valuable insights for skincare routines tailored to individual needs, aiding in the management of skin health. This innovative tool offers a non-invasive and efficient method for users to assess and understand their skin's condition.The application is an innovative oilyness detection app utilizing image processing and ResNet technology. Leveraging advanced deep learning techniques, it accurately analyzes skin types – dry, normal, oily, and high oily – from facial images. By harnessing ResNet's robust architecture, it overcomes complexities in image analysis and delivers reliable results. Users benefit from a user-friendly interface that swiftly processes webcam feed, providing real-time assessments of skin condition.</p>",
-        unsafe_allow_html=True
-    )
-    st.button("View more", type="primary")
-    st.markdown(
-        "<h3 style='color:#16056B'>Watch and Get Idea about your Skin</h3>",
-        unsafe_allow_html=True
-    )
-    with st.container():
-        left_column, right_column = st.columns(2)
-    with left_column:
-        st.markdown(
-            f'<iframe width="100%" height="315" src="https://www.youtube.com/embed/Rc4J0_Xg88w?si=x4gmIB6eq_cfkl2o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-            unsafe_allow_html=True
-        )
-    with right_column:
-        st.markdown(
-            f'<iframe width="100%" height="315" src="https://www.youtube.com/embed/onkB0EN0zas?si=_8TMmmDbfwFZu4oX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-            unsafe_allow_html=True
-        )
-    st.markdown(
-        "<h3 style='color:#16056B; margin-top: 30px'>Test your Skin Type</h3>",
-        unsafe_allow_html=True
-    )
-    with st.container():
-        left_column, right_column = st.columns(2)
-    with left_column:
-        st.markdown(
-            "<p style='text-align: justify;'>Test Your Skin Type offers a cutting-edge solution for personalized skincare assessment. With its intuitive interface and advanced image processing capabilities, this application empowers users to determine their skin type effectively. Leveraging sophisticated ResNet technology, it accurately detects four distinct skin types: dry, normal, oily, and high oily. The application  seamless integration of deep learning algorithms ensures precise analysis, enabling users to make informed decisions about their skincare routines. Upon initiating the test, users simply need to provide a facial image via webcam feed, and the application swiftly delivers real-time results. Coupled with its elegant design and user-friendly experience, revolutionizes skincare diagnostics, providing individuals with invaluable insights into their skin's unique needs. Whether seeking hydration solutions or oil-control strategies, this application serves as a trusted companion, promoting healthier skin and bolstering self-confidence.</p>",
-            unsafe_allow_html=True
-        )
-    with right_column:
-        st.markdown(
-            f'<img src="https://img.freepik.com/premium-vector/oily-dry-skin-different-human-skin-types-conditions-diagrammatic-sectional-view-skin_137876-131.jpg?w=1060" width="100%" height="300">',
-            unsafe_allow_html=True
-        )
-
     st.markdown(
         "<h3 style='color:#16056B; margin-top: 20px'>Predict your Skin Type</h3>",
         unsafe_allow_html=True
