@@ -7,4 +7,6 @@ streamlit
 opencv-python-headless
 requests
 torchvision
+matplotlib
+
 
